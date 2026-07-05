@@ -10,17 +10,21 @@
 
 #### Навыки и инструменты
 
-- **Системное администрирование**: Linux (Ubuntu, Alma Linux), shell-скрипты (Bash);
+- **Системное администрирование**: Linux (Ubuntu, AlmaLinux, Centos), shell-скрипты (Bash);
 - **Контейнеризация**: Docker (оптимизация образов, безопасность, Docker Compose, локальный registry), containerd;
-- **Kubernetes**: развертывание кластеров на виртуальных машинах (kubeadm), настройка сетей (Calico, Flannel), Helm, StatefulSets, Network Policies, NFS, Ingress (NGINX, MetalLB);
-- **Мониторинг и логирование**: сбор метрик (Prometheus, VictoriaMetrics), сбор логов (Grafana Alloy + VictoriaLogs), визуализация (Grafana);
-- **CI/CD**: Github Actions, GitLab CI/CD (настройка пайплайнов, деплой приложений);
-- **Хранение секретов**: Hashicorp Vault, Cert-Manager, External Secrets Operator; настройка TLS-сертификатов и Self-Signed Certificate Authority с помощью Vault;
-- **ArgoCD**: развертывание приложений из Git-репозиториев, управление конфигурациями и проектами;
+- **Kubernetes**: развертывание кластеров на виртуальных машинах (kubeadm, Kubespray), настройка сетей (Calico, Flannel), Helm, Network Policies, NFS, Ingress (NGINX Ingress Controller, MetalLB);
+- **Мониторинг**: сбор метрик (стек Prometheus\VictoriaMetrics), визуализация (Grafana);
+- **Логирование**: сбор логов (Vector.dev, Grafana Alloy, Fluentbit), хранение (Grafana Loki, Elasticsearch, VictoriaLogs);
+- **Трассировка**: инструменты (OpenTelemetry SDK клиенты + OpenTelemetry Collector), хранение (Grafana Tempo);
+- **CI/CD**: Github Actions, GitLab CI/CD (настройка пайплайнов, деплой приложений), подключение Gitlab-раннеров к Kubernetes;
+- **Хранение секретов**: HashiCorp Vault, Cert-manager, External Secrets Operator; развертывание Vault PKI и настройка TLS-сертификатов и Certificate Authority;
+- **ArgoCD**: развертывание приложений из Git-репозиториев, управление проектами, sync-wave, App-of-apps;
+- **Управление конфигурацией**: Ansible, Kubespray;
+- **Брокеры сообщений**: Apache Kafka, ZeroMQ;
 
 #### Проекты
 
-- Реализован кластер Kubernetes на базе виртуальных машин с использованием kubeadm для высокопроизводительной онлайн обработки данных. Кластер включает в себя подсистемы мониторинга (стек VictoriaMetrics и Prometheus), логирования (Grafana Alloy и Victoria Metrics), хранения секретов (Hashicorp Vault), маршрутизации трафика (F5 Nginx Ingress Controller). Деплой приложений осуществляется через ArgoCD на базе Helm-чартов.
+- Реализован кластер Kubernetes для [онлайн-обработки данных эксперимента NICA/MPD](https://indico.jinr.ru/event/5789/contributions/36384/attachments/26036/46477/MMCP'2026.pdf). Кластер включает в себя подсистемы мониторинга (стек VictoriaMetrics/Prometheus), логирования (Vector.dev + VictoriaLogs), трассировки (OpenTelemetry Collector + Grafana Tempo), хранения секретов (HashiCorp Vault + ESO/Cert-manager), маршрутизации трафика (NGINX Ingress Controller). Деплой приложений осуществляется через ArgoCD на базе Helm-чартов, управление конфигурацией - Ansible + Kubespray.
 
 ### Разработка
 
@@ -37,7 +41,7 @@
 
 #### Проекты
 
-- Реализован [pet-проект онлайн-магазина](https://github.com/ded-otshelnik/python_shop) на стеке Django. Проект запускается через Docker Compose, включая PostgreSQL, Nginx, а также микросервис на Django Rest Framework. Настроен простой HTTPS через self-signed сертификаты. Стек: Django, Django Rest Framework, Django Allauth.
+- Реализован [pet-проект онлайн-магазина](https://github.com/ded-otshelnik/python_shop) на стеке Django. Проект запускается через Docker Compose, включая PostgreSQL, Nginx, а также микросервис на Django Rest Framework. Настроен простой HTTPS через self-signed сертификаты. Добавлена авторизация на базе OAuth (Google, Yandex). Стек: Django, Django Rest Framework, Django Allauth.
 
 ### Machine Learning / Data Science
 
@@ -54,20 +58,9 @@
 - Разработан [программный пакет](https://github.com/ded-otshelnik/nnmd) на Python для создания машинно-обучаемых потенциалов для молекулярно-динамических экспериментов на суперкомпьютерах. Реализовал нейронную сеть высокой размерности, ее обучение/применение в молекулярно-динамическом эксперименте. Стек: PyTorch, Pybind11, CUDA;
 - Сконструирована глубокая нейронная сеть и база данных по масс-спектрометрии для обнаружения объектов на снимках растений для фармацевтов. Сеть реализована на основе YOLOv11 модели для обнаружения различных признаков растений, которые исследуются во время разработки новых лекарств. Стек: PyTorch, Ultralytics, SQLAlchemy, psycopg;
 
-### Изучаемые или планируемые к изучению технологии и методологии
-
-- Высокодоступные кластеры Kubernetes, оценка производительности и оптимизация;
-- Продвинутый GitOps для Kubernetes: GitLab CI/CD, ArgoCD;
-- GoLang (разработка микросервисов, gRPC);
-- Apache Kafka, RabbitMQ, ZeroMQ (распределенная потоковая платформа);
-
 ---
-
-### Сертификаты и курсы
-
-### О себе
 
 ### Контакты
 
-- Telegram: [@ded_otshelnik](https://t.me/ded_otshelnik)
-- Email: <budnikov_andrey777@gmail.com>
+- Linkedin: <https://www.linkedin.com/in/andrey-budnikov/>
+- Email: <budnikov.andrey777@gmail.com>
